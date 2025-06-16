@@ -1,0 +1,57 @@
+{
+  "servers": [
+    {
+      "name": "my-weather-server",
+      "url": "http://localhost:8080",
+      "description": "Weather forecast and alerts MCP server",
+      "tools": [
+        {
+          "name": "getWeatherForecastByLocation",
+          "description": "Get weather forecast for a specific latitude/longitude",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "description": "Latitude coordinate"
+              },
+              "longitude": {
+                "type": "number",
+                "description": "Longitude coordinate"
+              }
+            },
+            "required": ["latitude", "longitude"]
+          }
+        },
+        {
+          "name": "getAlerts",
+          "description": "Get weather alerts for a US state. Input is Two-letter US state code (e.g. CA, NY)",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "state": {
+                "type": "string",
+                "description": "Two-letter US state code (e.g. CA, NY)"
+              }
+            },
+            "required": ["state"]
+          }
+        },
+        {
+          "name": "toUpperCase",
+          "description": "Put the text to upper case",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string",
+                "description": "Text to convert to uppercase"
+              }
+            },
+            "required": ["input"]
+          }
+        }
+      ]
+    }
+  ]
+}
